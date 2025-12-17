@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Jerit Jose</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for project details page */
+        .project-details-section {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            min-height: 100vh;
+        }
+
+        .project-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .project-media-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .project-media-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .media-item {
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .media-item img,
+        .media-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-description {
+            background: rgba(25, 25, 25, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-btn:hover {
+            background: var(--primary-color);
+            color: var(--bg-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Jerit<span class="accent">.</span></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="container project-details-section">
+            <div id="project-content">
+                <!-- Content will be loaded dynamically -->
+                <div class="project-header">
+                    <h1 class="section-title" id="project-title">Loading...</h1>
+                </div>
+
+                <div class="project-media-container">
+                    <div class="media-item">
+                        <img id="project-image" src="" alt="Project Image" style="display: none;">
+                    </div>
+                    <div class="media-item">
+                        <video id="project-video" controls style="display: none;">
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <p id="project-desc"></p>
+                </div>
+            </div>
+
+            <div style="text-align: center; gap: 20px; display: flex; justify-content: center; flex-wrap: wrap;">
+                <a href="#" id="project-github" target="_blank" class="back-btn" style="display: none;"><i
+                        class="fa-brands fa-github"></i> View on GitHub</a>
+                <a href="index.html#projects" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to
+                    Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Jerit Jose. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="project-loader.js"></script>
+</body>
+
+</html>
